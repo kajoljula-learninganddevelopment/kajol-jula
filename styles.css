@@ -1,515 +1,275 @@
-/* ==========================================================
-   KAJOL JULA PORTFOLIO V2
+/* ==========================================
+   KAJOL JULA PORTFOLIO
    PART 1
-========================================================== */
+========================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
 
 :root{
-
---primary:#032A61;
---accent:#FFD200;
---dark:#111827;
---gray:#6B7280;
---light:#F8FAFC;
---white:#FFFFFF;
-
---radius:18px;
-
---shadow:
-0 10px 35px rgba(15,23,42,.08);
-
---transition:.35s ease;
-
+    --primary:#032A61;
+    --secondary:#FFD200;
+    --text:#1F2937;
+    --light:#F8FAFC;
+    --white:#FFFFFF;
+    --border:#E5E7EB;
+    --shadow:0 12px 30px rgba(0,0,0,.08);
+    --radius:18px;
 }
 
-/* RESET */
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-
-scroll-behavior:smooth;
-
+    scroll-behavior:smooth;
 }
 
 body{
-
-font-family:'Inter',sans-serif;
-
-background:var(--light);
-
-color:var(--dark);
-
-line-height:1.7;
-
-overflow-x:hidden;
-
-}
-
-/* CONTAINER */
-
-.container{
-
-width:min(1150px,90%);
-
-margin:auto;
-
-}
-
-/* TYPOGRAPHY */
-
-h1,h2,h3,h4{
-
-font-family:'Poppins',sans-serif;
-
-font-weight:700;
-
-line-height:1.2;
-
-}
-
-p{
-
-color:var(--gray);
-
-}
-
-a{
-
-text-decoration:none;
-
-color:inherit;
-
+    font-family:'Inter',sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.7;
 }
 
 img{
-
-max-width:100%;
-
-display:block;
-
+    max-width:100%;
+    display:block;
 }
 
-/* ==========================
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:min(1150px,90%);
+    margin:auto;
+}
+
+/* ======================
 HEADER
-========================== */
+====================== */
 
 .header{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-background:rgba(255,255,255,.88);
-
-backdrop-filter:blur(18px);
-
-z-index:1000;
-
-border-bottom:1px solid rgba(0,0,0,.05);
-
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+    z-index:1000;
 }
 
 .header .container{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-height:78px;
-
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:80px;
 }
 
 .logo{
-
-font-size:1.4rem;
-
-font-weight:700;
-
-color:var(--primary);
-
-font-family:'Poppins';
-
+    font-family:'Poppins',sans-serif;
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--primary);
 }
 
 .nav-links{
-
-display:flex;
-
-list-style:none;
-
-gap:35px;
-
+    display:flex;
+    list-style:none;
+    gap:30px;
 }
 
 .nav-links a{
-
-font-weight:500;
-
-transition:var(--transition);
-
-position:relative;
-
+    color:#444;
+    font-weight:500;
+    transition:.3s;
 }
 
 .nav-links a:hover{
-
-color:var(--primary);
-
+    color:var(--primary);
 }
-
-.nav-links a::after{
-
-content:"";
-
-position:absolute;
-
-left:0;
-
-bottom:-6px;
-
-width:0;
-
-height:2px;
-
-background:var(--accent);
-
-transition:.3s;
-
-}
-
-.nav-links a:hover::after{
-
-width:100%;
-
-}
-
-/* Resume Button */
 
 .resume-btn{
-
-padding:12px 24px;
-
-background:var(--primary);
-
-color:white;
-
-border-radius:50px;
-
-font-weight:600;
-
-transition:.3s;
-
+    background:var(--primary);
+    color:white;
+    padding:12px 24px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
 }
 
 .resume-btn:hover{
-
-transform:translateY(-3px);
-
-box-shadow:var(--shadow);
-
+    transform:translateY(-3px);
 }
 
-/* ==========================
+/* ======================
 HERO
-========================== */
+====================== */
 
 .hero{
-
-min-height:100vh;
-
-display:flex;
-
-align-items:center;
-
-padding-top:90px;
-
-background:
-linear-gradient(
-180deg,
-#ffffff 0%,
-#f8fbff 100%
-);
-
+    padding:160px 0 100px;
+    background:linear-gradient(180deg,#ffffff,#f4f8ff);
 }
 
 .hero-grid{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:70px;
-
-align-items:center;
-
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:70px;
+    align-items:center;
 }
 
 .badge{
-
-display:inline-block;
-
-padding:8px 18px;
-
-background:#e9f0ff;
-
-color:var(--primary);
-
-border-radius:40px;
-
-font-size:.9rem;
-
-font-weight:600;
-
-margin-bottom:25px;
-
+    display:inline-block;
+    padding:8px 18px;
+    background:#EAF1FF;
+    color:var(--primary);
+    border-radius:30px;
+    font-size:.9rem;
+    font-weight:600;
+    margin-bottom:25px;
 }
 
 .hero h1{
-
-font-size:4rem;
-
-margin-bottom:25px;
-
+    font-family:'Poppins',sans-serif;
+    font-size:3.8rem;
+    line-height:1.2;
+    margin-bottom:25px;
 }
 
 .hero h1 span{
-
-color:var(--primary);
-
-display:block;
-
+    color:var(--primary);
 }
 
 .hero p{
-
-font-size:1.15rem;
-
-max-width:600px;
-
-margin-bottom:35px;
-
+    font-size:1.1rem;
+    color:#555;
+    margin-bottom:35px;
+    max-width:550px;
 }
 
 .hero-buttons{
-
-display:flex;
-
-gap:18px;
-
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
 }
 
-/* Buttons */
-
 .primary-btn{
-
-background:var(--primary);
-
-color:white;
-
-padding:16px 34px;
-
-border-radius:50px;
-
-font-weight:600;
-
-transition:.3s;
-
+    background:var(--primary);
+    color:white;
+    padding:15px 32px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
 }
 
 .primary-btn:hover{
-
-transform:translateY(-4px);
-
-box-shadow:var(--shadow);
-
+    transform:translateY(-3px);
+    box-shadow:var(--shadow);
 }
 
 .secondary-btn{
-
-border:2px solid var(--primary);
-
-padding:16px 34px;
-
-border-radius:50px;
-
-font-weight:600;
-
-color:var(--primary);
-
-transition:.3s;
-
+    border:2px solid var(--primary);
+    color:var(--primary);
+    padding:15px 32px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
 }
 
 .secondary-btn:hover{
-
-background:var(--primary);
-
-color:white;
-
+    background:var(--primary);
+    color:white;
 }
 
-/* Profile */
+.hero-image{
+    display:flex;
+    justify-content:center;
+}
 
 .profile-card{
-
-width:420px;
-
-height:520px;
-
-background:white;
-
-border-radius:28px;
-
-box-shadow:var(--shadow);
-
-overflow:hidden;
-
-margin-left:auto;
-
+    width:360px;
+    height:460px;
+    overflow:hidden;
+    border-radius:24px;
+    background:white;
+    box-shadow:var(--shadow);
 }
 
 .profile-card img{
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-/* ==========================
+/* ======================
 METRICS
-========================== */
+====================== */
 
 .metrics{
-
-margin-top:-70px;
-
-padding-bottom:100px;
-
+    padding:70px 0;
+    background:var(--light);
 }
 
 .metric-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:25px;
-
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
 }
 
 .metric{
-
-background:white;
-
-padding:40px;
-
-border-radius:20px;
-
-text-align:center;
-
-box-shadow:var(--shadow);
-
-transition:.3s;
-
-}
-
-.metric:hover{
-
-transform:translateY(-8px);
-
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:var(--shadow);
 }
 
 .metric h2{
-
-font-size:3rem;
-
-color:var(--primary);
-
-margin-bottom:10px;
-
+    color:var(--primary);
+    font-size:2.8rem;
+    margin-bottom:8px;
 }
 
 .metric p{
-
-font-weight:500;
-
+    color:#666;
+    font-weight:500;
 }
 
-/* Sections */
+/* ======================
+COMMON SECTION
+====================== */
 
 .section{
-
-padding:120px 0;
-
+    padding:100px 0;
 }
 
 .section-title{
-
-text-align:center;
-
-margin-bottom:70px;
-
+    text-align:center;
+    margin-bottom:60px;
 }
 
 .section-title span{
-
-letter-spacing:2px;
-
-font-size:.85rem;
-
-font-weight:700;
-
-color:var(--accent);
-
+    color:var(--secondary);
+    font-weight:700;
+    letter-spacing:2px;
 }
 
 .section-title h2{
-
-font-size:2.8rem;
-
-margin-top:15px;
-
-max-width:700px;
-
-margin-inline:auto;
-
+    font-family:'Poppins',sans-serif;
+    font-size:2.7rem;
+    margin-top:10px;
 }
 
 .about-text{
-
-font-size:1.15rem;
-
-max-width:850px;
-
-text-align:center;
-
-margin:auto;
-
-}
-
-/* ==========================================================
-   KAJOL JULA PORTFOLIO V2
-   PART 2
-========================================================== */
-
-/* ==========================
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    font-size:1.1rem;
+}/* ======================
 SERVICES
-========================== */
+====================== */
 
 .service-grid{
     display:grid;
@@ -519,32 +279,31 @@ SERVICES
 
 .card{
     background:var(--white);
-    padding:40px 30px;
     border-radius:var(--radius);
+    padding:35px;
     box-shadow:var(--shadow);
-    transition:var(--transition);
-    border:1px solid rgba(0,0,0,.05);
+    border:1px solid var(--border);
+    transition:.3s ease;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    border-color:var(--accent);
-    box-shadow:0 20px 40px rgba(15,23,42,.12);
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
 }
 
 .card h3{
     color:var(--primary);
     margin-bottom:15px;
-    font-size:1.35rem;
+    font-family:'Poppins',sans-serif;
 }
 
 .card p{
-    font-size:.98rem;
+    color:#666;
 }
 
-/* ==========================
+/* ======================
 CASE STUDIES
-========================== */
+====================== */
 
 .cards-3{
     display:grid;
@@ -553,16 +312,16 @@ CASE STUDIES
 }
 
 .case-card{
-    background:var(--white);
-    border-radius:var(--radius);
+    background:white;
     padding:35px;
-    box-shadow:var(--shadow);
-    transition:var(--transition);
+    border-radius:var(--radius);
     border-top:5px solid var(--primary);
+    box-shadow:var(--shadow);
+    transition:.3s;
 }
 
 .case-card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-8px);
 }
 
 .case-card h3{
@@ -570,56 +329,51 @@ CASE STUDIES
     margin-bottom:15px;
 }
 
-.case-card p{
-    color:var(--gray);
-}
-
-/* ==========================
+/* ======================
 RESOURCES
-========================== */
+====================== */
 
 .resources{
-    background:var(--white);
+    background:white;
 }
 
 .resource-card{
-    background:linear-gradient(135deg,#032A61,#05408F);
+    background:linear-gradient(135deg,var(--primary),#0b4ba3);
     color:white;
     padding:35px;
     border-radius:var(--radius);
     text-align:center;
-    font-family:'Poppins',sans-serif;
-    font-size:1.15rem;
     font-weight:600;
-    transition:var(--transition);
-    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+    transition:.3s;
 }
 
 .resource-card:hover{
-    transform:translateY(-8px) scale(1.02);
+    transform:translateY(-8px);
 }
 
-/* ==========================
+/* ======================
 CONTACT
-========================== */
+====================== */
 
 .contact{
-    padding:120px 0;
-    text-align:center;
-    background:linear-gradient(135deg,#032A61,#05408F);
+    background:linear-gradient(135deg,var(--primary),#0b4ba3);
     color:white;
+    text-align:center;
+    padding:100px 0;
 }
 
 .contact h2{
-    color:white;
-    font-size:2.8rem;
+    font-family:'Poppins',sans-serif;
+    font-size:2.6rem;
     margin-bottom:20px;
 }
 
 .contact p{
-    color:rgba(255,255,255,.85);
-    max-width:650px;
-    margin:0 auto 40px;
+    color:rgba(255,255,255,.9);
+    max-width:700px;
+    margin:auto;
+    margin-bottom:35px;
 }
 
 .contact-buttons{
@@ -632,90 +386,47 @@ CONTACT
 .contact-buttons a{
     background:white;
     color:var(--primary);
-    padding:15px 30px;
+    padding:14px 30px;
     border-radius:50px;
     font-weight:600;
-    transition:var(--transition);
+    transition:.3s;
 }
 
 .contact-buttons a:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 35px rgba(0,0,0,.2);
+    transform:translateY(-4px);
 }
 
-/* ==========================
+/* ======================
 FOOTER
-========================== */
+====================== */
 
 footer{
     background:#07172F;
     color:white;
-    padding:30px 0;
     text-align:center;
+    padding:30px 20px;
 }
 
 footer p{
-    color:rgba(255,255,255,.75);
+    color:rgba(255,255,255,.8);
 }
 
-/* ==========================
-ANIMATIONS
-========================== */
+/* ======================
+ACTIVE NAVIGATION
+====================== */
 
-.card,
-.case-card,
-.metric,
-.resource-card{
-    animation:fadeUp .8s ease both;
+.nav-links a.active{
+    color:var(--primary);
+    font-weight:700;
 }
 
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
+.nav-links a.active::after{
+    width:100%;
 }
 
-/* ==========================
-SCROLLBAR
-========================== */
-
-::-webkit-scrollbar{
-    width:10px;
-}
-
-::-webkit-scrollbar-track{
-    background:#EDF2F7;
-}
-
-::-webkit-scrollbar-thumb{
-    background:var(--primary);
-    border-radius:20px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background:#021F4D;
-}
-
-/* ==========================
-SELECTION
-========================== */
-
-::selection{
-    background:var(--accent);
-    color:#111;
-}
-
-/* ==========================
+/* ======================
 RESPONSIVE
-========================== */
+====================== */
 
 @media(max-width:992px){
 
@@ -724,22 +435,22 @@ RESPONSIVE
         text-align:center;
     }
 
-    .hero-content{
-        order:2;
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
     }
 
     .hero-image{
-        order:1;
+        order:-1;
     }
 
     .profile-card{
         width:320px;
-        height:400px;
-        margin:auto;
-    }
-
-    .hero h1{
-        font-size:3rem;
+        height:420px;
     }
 
     .metric-grid,
@@ -761,8 +472,8 @@ RESPONSIVE
     .nav-links{
         flex-wrap:wrap;
         justify-content:center;
-        gap:15px;
-        margin:20px 0;
+        gap:18px;
+        margin:15px 0;
     }
 
     .resume-btn{
@@ -770,16 +481,11 @@ RESPONSIVE
     }
 
     .hero{
-        padding-top:180px;
+        padding:180px 0 80px;
     }
 
     .hero h1{
-        font-size:2.4rem;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-        align-items:center;
+        font-size:2.5rem;
     }
 
     .metric-grid,
@@ -788,37 +494,12 @@ RESPONSIVE
         grid-template-columns:1fr;
     }
 
-    .metric{
-        padding:30px;
-    }
-
-    .section{
-        padding:90px 0;
-    }
-
-    .section-title h2{
-        font-size:2rem;
-    }
-
-    .contact h2{
-        font-size:2rem;
-    }
-
 }
 
 @media(max-width:480px){
 
-    body{
-        font-size:15px;
-    }
-
     .hero h1{
         font-size:2rem;
-    }
-
-    .profile-card{
-        width:260px;
-        height:330px;
     }
 
     .primary-btn,
@@ -827,4 +508,26 @@ RESPONSIVE
         text-align:center;
     }
 
+    .profile-card{
+        width:260px;
+        height:340px;
+    }
+
+}
+
+/* ======================
+SCROLLBAR
+====================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--primary);
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+    background:#EEF2F7;
 }
